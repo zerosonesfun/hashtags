@@ -26,7 +26,7 @@ return [
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/#(\S+)/g,'<a href="?q=$1" title="Find more posts tagged with #$1">#$1</a>');
+          entries[i].innerHTML = entries[i].innerHTML.replace(/#(\S+)/g,'<a href="/?q=$1" title="Find more posts tagged with #$1">#$1</a>');
         }
       }
     }
