@@ -1,6 +1,6 @@
 {
-    "name": "zerosonesfun/flarum-ext-fickle-announcement",
-    "description": "A fickle banner.",
+    "name": "zerosonesfun/hashtags",
+    "description": "Adds hashtagging.",
     "license": "MIT",
     "authors": [
         {
@@ -8,6 +8,11 @@
             "email": "wilcosky@gmail.com",
             "homepage": "https://wilcosky.com",
             "role": "Creator"
+        },
+         {
+            "name": "Carl Winkelmann",
+            "homepage": "https://clarkwinkelmann.com/",
+            "role": "Developer"
         }
     ],
     "type": "flarum-extension",
@@ -15,13 +20,13 @@
         "flarum/core": "^0.1.0-beta.8"
     },
     "autoload": {
-        "psr-4": {"ZerosOnesFun\\Fickle-Announcement\\": "src/"}
+        "psr-4": {"ZerosOnesFun\\Hashtags\\": "src/"}
     },
     "extra": {
         "flarum-extension": {
-            "title": "Fickle",
+            "title": "Hashtags",
             "icon": {
-                "name": "fas fa-scroll",
+                "name": "fas fa-hashtag",
                 "backgroundColor": "#ddd",
                 "color": "#000"
             }
