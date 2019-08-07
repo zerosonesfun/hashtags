@@ -20,13 +20,13 @@ return [
   flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
     // context.contentHtml was updated by CommentPost.config() so we can simply compare it again
     if (context.customExtLastContentHtml !== context.contentHtml) {
-      var siteURL = '',
+      var siteURL = '/',
         entries = this.element.querySelectorAll('.Post-body p'),
         i;console.log(entries);
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,' <a href="'+siteURL+'search/$3" title="Find more posts tagged with #$3">#$3</a>');
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,' <a href="'+siteURL+'?q=$3" title="Find more posts tagged with #$3">#$3</a>');
         }
       }
     }
