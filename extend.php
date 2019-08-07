@@ -3,7 +3,7 @@
 /*
  * This file is part of an extension for Flarum, called Hashtags.
  * The idea behind Hashtags is from Billy Wilcosky. Connect with Billy at https://wilcosky.com.
- * But, it would not have been possible without Carl Winkelman who showed how to hook into posts. https://clarkwinkelmann.com/.
+ * But, it would not have been possible without Clark Winkelman who showed how to hook into posts. https://clarkwinkelmann.com/.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
