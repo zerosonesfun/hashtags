@@ -30,11 +30,11 @@ return [
      }
       var siteURL = '/',
         entries = this.element.querySelectorAll('.Post-paragraph'),
-        i;console.log(entries);
+        i;
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,DOMPurify.sanitize(' <a href="'+siteURL+'?q=$3" title="Find more posts related to $3">#$3</a>'));
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,DOMPurify.sanitize(' <a href="'+siteURL+'?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>'));
         }
       }
     }
@@ -47,7 +47,7 @@ HTML;
         ->configure(function (Configurator $config) {
             $config->BBCodes->addCustom(
                 '[t]{TEXT100}[/t]',
-                '<span class="Tag-phrase"><a href="/?q={TEXT100}" title="Find more posts related to {TEXT100}">{TEXT100}</a></span>'
+                '<a href="/?q={TEXT100}" class="tagPhrase" title="Find more posts related to {TEXT100}">{TEXT100}</a>'
             );
         })
 ];
