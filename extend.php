@@ -10,6 +10,7 @@
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;
+use s9e\TextFormatter\Configurator;
 
 return [
 (new Extend\Frontend('forum'))
@@ -41,5 +42,12 @@ return [
   });
 </script>
 HTML;
+        }),
+        (new Extend\Formatter)
+        ->configure(function (Configurator $config) {
+            $config->BBCodes->addCustom(
+                '[t]{TEXT100}[/t]',
+                '<span class="Tag-phrase"><a href="/?q={TEXT100}" title="Find more posts related to {TEXT100}">{TEXT100}</a></span>'
+            );
         })
 ];
