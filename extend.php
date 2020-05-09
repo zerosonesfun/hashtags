@@ -1,10 +1,11 @@
 <?php
 
 /*
- * Hashtags is a Flarum extension created by Billy Wilcosky.
+ * This file is part of an extension for Flarum, called Hashtags.
+ * The creator of this extension is Billy Wilcosky.
+ * Connect with Billy at https://wilcosky.com.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- * For instructions, please view the README file.
  */
 
 use Flarum\Extend;
@@ -15,7 +16,6 @@ return [
 (new Extend\Frontend('forum'))
         ->content(function (Document $document) {
             $document->foot[] = <<<HTML
-<script type="text/javascript" src="/assets/extensions/zerosonesfun-hashtags/purify.min.js"></script>
 <script>
   flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
     if (context.customExtLastContentHtml !== context.contentHtml) {
@@ -33,7 +33,7 @@ return [
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,DOMPurify.sanitize(' <a href="'+siteURL+'all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>'));
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,' <a href="'+siteURL+'all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
         }
       }
     }
