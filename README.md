@@ -1,7 +1,7 @@
 # Hashtags
-Adds "hashtag to link" ability to Flarum. To be clear, this will simply look for a word which starts with "#" and turn it into a link. The link will perform a search if clicked. This does not do anything like track the popularity of hashtags. Still, it can be very helpful to be able to quickly point someone to a specific search term this way: Click #puppies, and you'll find more posts on puppies.
+Adds "hashtag to link" ability to Flarum by turning any word with begins with a "#" into a link. When the link it clicked, a search is performed for related posts. This does not track hashtag popularity. This is a very minimal extension which (besides the composer.json, readme.md, and license) is only 1 file. 52 lines, 1.86 KB.
 
-Also as an added bonus, you can tag a phrase or multiple keywords with spaces, versus posting a traditional "hashtag." But, you will have to use a new BBcode which looks like this (uses a "t"):
+As an added bonus, you may tag a phrase or multiple keywords with spaces, versus posting a traditional "hashtag." But, you will have to use a BBcode which looks like this (uses a "t" for tag):
 `[t]your search phrase[/t]`
 
 ## Install
@@ -9,3 +9,6 @@ Also as an added bonus, you can tag a phrase or multiple keywords with spaces, v
 
 ## Update
 `composer update zerosonesfun/hashtags`
+
+## Remove
+`composer remove zerosonesfun/hashtags`
