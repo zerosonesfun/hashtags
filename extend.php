@@ -27,7 +27,7 @@ return [
     for(var i = 0, all = elss.length; i < all; i++){   
          elss[i].parentNode.classList.remove('Post-paragraph');
      }
-      var siteURL = '/',
+      var siteURL = '../',
         entries = this.element.querySelectorAll('.Post-paragraph'),
         i;
   
@@ -46,7 +46,7 @@ HTML;
         ->configure(function (Configurator $config) {
             $config->BBCodes->addCustom(
                 '[t]{TEXT100}[/t]',
-                '<a href="/all?q={TEXT100}" class="tagPhrase" title="Find more posts related to {TEXT100}">{TEXT100}</a>'
+                '<a href="../all?q={TEXT100}" class="tagPhrase" title="Find more posts related to {TEXT100}">{TEXT100}</a>'
             );
         })
 ];
