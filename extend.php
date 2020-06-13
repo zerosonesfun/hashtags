@@ -3,7 +3,6 @@
 /*
  * This file is part of an extension for Flarum, called Hashtags.
  * The creator of this extension is Billy Wilcosky.
- * Connect with Billy at https://wilcosky.com.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -27,13 +26,13 @@ return [
     for(var i = 0, all = elss.length; i < all; i++){   
          elss[i].parentNode.classList.remove('Post-paragraph');
      }
-      var siteURL = '../',
+      var siteURL = app.forum.attribute('baseUrl'),
         entries = this.element.querySelectorAll('.Post-paragraph'),
         i;
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,' <a href="'+siteURL+'all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S])).|^)#(\S+)\b/g,' <a href="'+siteURL+'/all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
         }
       }
     }
@@ -46,7 +45,7 @@ HTML;
         ->configure(function (Configurator $config) {
             $config->BBCodes->addCustom(
                 '[t]{TEXT100}[/t]',
-                '<a href="../all?q={TEXT100}" class="tagPhrase" title="Find more posts related to {TEXT100}">{TEXT100}</a>'
+                '<a href="/all?q={TEXT100}" class="tagPhrase" title="Find more posts related to {TEXT100}">{TEXT100}</a>'
             );
         })
 ];
