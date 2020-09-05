@@ -32,7 +32,7 @@ return [
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S+])).|^)#(\p{L}+)/gu,' <a href="'+siteURL+'/all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S+]))[\s\S])#(\p{L}+)/gu,' <a href="'+siteURL+'/all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
         }
       }
     }
