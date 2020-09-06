@@ -18,6 +18,15 @@ return [
 <script>
   flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
     if (context.customExtLastContentHtml !== context.contentHtml) {
+    var victims = document.querySelectorAll('p');
+    for( var i = 0; i < victims.length; i++ ) {
+    if( victims[i].hasChildNodes ) {
+    var padLeft = document.createTextNode( " " );
+    var padRight = document.createTextNode( "" );
+    victims[i].appendChild( padRight );
+    victims[i].insertBefore( padLeft, victims[i].firstChild );
+   }
+  }
     var els = document.getElementsByTagName("p");
     for(var i = 0, all = els.length; i < all; i++){   
          els[i].classList.add('Post-paragraph');
@@ -32,7 +41,7 @@ return [
   
       if ( entries.length > 0 ) {
         for (i = 0; i < entries.length; i = i + 1) {
-          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S+]))[\s\S])#(\p{L}+)/gu,' <a href="'+siteURL+'/all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
+          entries[i].innerHTML = entries[i].innerHTML.replace(/((?!([\S]))[\s\S])#(\p{L}+)/gu,' <a href="'+siteURL+'/all?q=$3" class="hashTag" title="Find more posts related to $3">#$3</a>');
         }
       }
     }
