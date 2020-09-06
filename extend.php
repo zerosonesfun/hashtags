@@ -18,13 +18,13 @@ return [
 <script>
   flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
     if (context.customExtLastContentHtml !== context.contentHtml) {
-    var victims = document.querySelectorAll('p');
-    for( var i = 0; i < victims.length; i++ ) {
-    if( victims[i].hasChildNodes ) {
+    var pspace = document.querySelectorAll('p');
+    for( var i = 0; i < pspace.length; i++ ) {
+    if( pspace[i].hasChildNodes ) {
     var padLeft = document.createTextNode( " " );
     var padRight = document.createTextNode( "" );
-    victims[i].appendChild( padRight );
-    victims[i].insertBefore( padLeft, victims[i].firstChild );
+    pspace[i].appendChild( padRight );
+    pspace[i].insertBefore( padLeft, pspace[i].firstChild );
    }
   }
     var els = document.getElementsByTagName("p");
