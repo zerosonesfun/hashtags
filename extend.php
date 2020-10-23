@@ -2,7 +2,6 @@
 
 /*
  * This file is part of an extension for Flarum, called Hashtags.
- * The creator of this extension is Billy Wilcosky.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -16,8 +15,7 @@ return [
         ->content(function (Document $document) {
             $document->foot[] = <<<HTML
 <script>
-  flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'config', function(output, isInitialized, context) {
-    if (context.customExtLastContentHtml !== context.contentHtml) {
+  flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function(output, vnode) {
     var pspace = document.querySelectorAll('p');
     for( var i = 0; i < pspace.length; i++ ) {
     if( pspace[i].hasChildNodes ) {
@@ -47,8 +45,6 @@ return [
           }
       } 
     }  
-}
-    context.customExtLastContentHtml = context.contentHtml;
   });
 </script>
 HTML;
