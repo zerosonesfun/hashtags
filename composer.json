@@ -1,6 +1,8 @@
 {
     "name": "zerosonesfun/hashtags",
     "description": "Adds hashtagging.",
+    "type": "flarum-extension",
+    "keywords": ["discussion, hashtags"],
     "license": "MIT",
     "authors": [
         {
@@ -8,16 +10,30 @@
             "role": "Creator"
         }
     ],
-    "type": "flarum-extension",
+    "support": {
+        "issues": "https://github.com/zerosonesfun/hastags/issues",
+        "source": "https://github.com/zerosonesfun/hashtags",
+        "forum": "https://discuss.flarum.org"
+    },
+    "homepage": "https://www.wilcosky.com",
+    "funding": [
+        {
+            "type": "website",
+            "url": "https://www.wilcosky.com"
+        }
+    ],
     "require": {
-        "flarum/core": ">=0.1.0-beta.14 <0.1.0-beta.15"
+        "flarum/core": "^0.1.0-beta.15"
     },
     "autoload": {
-        "psr-4": {"ZerosOnesFun\\Hashtags\\": "src/"}
+        "psr-4": {
+            "ZerosOnesFun\\HashTags\\": "src/"
+        }
     },
     "extra": {
         "flarum-extension": {
             "title": "Hashtags",
+            "category": "discussion",
             "icon": {
                 "name": "fas fa-hashtag",
                 "backgroundColor": "#ddd",
