@@ -2,7 +2,7 @@
     "name": "zerosonesfun/hashtags",
     "description": "Adds hashtagging.",
     "type": "flarum-extension",
-    "keywords": ["discussion, hashtags"],
+    "keywords": ["discussion", "hashtags"],
     "license": "MIT",
     "authors": [
         {
